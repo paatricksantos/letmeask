@@ -1,10 +1,12 @@
-import illustrationImg from '../assets/images/illustration.svg';
-import logoImg from '../assets/images/logo.svg';
-import googleIconImg from '../assets/images/google-icon.svg';
+import googleIconImg from '../../assets/images/google-icon.svg';
+import illustrationImg from '../../assets/images/illustration.svg';
+import logoImg from '../../assets/images/logo.svg';
+import { Button } from '../../components/Button';
+import { Container } from './styles';
 
 export function Home() {
   return (
-    <div>
+    <Container>
       <aside>
         <img
           src={illustrationImg}
@@ -13,6 +15,7 @@ export function Home() {
         <strong>Crie salas de Q&amp;A ao-vivo</strong>
         <p>Tire suas dúvidas da sua audiêcia em tempo-real</p>
       </aside>
+
       <main>
         <div>
           <img src={logoImg} alt="Letmeask" />
@@ -23,10 +26,10 @@ export function Home() {
           <div>ou entre em um sala</div>
           <form>
             <input type="text" placeholder="Digite o código da sala" />
-            <button type="submit">Entrar na sala</button>
+            <Button type="submit">Entrar na sala</Button>
           </form>
         </div>
       </main>
-    </div>
+    </Container>
   );
 }
