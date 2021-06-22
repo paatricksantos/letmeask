@@ -52,6 +52,12 @@ export const Container = styled.div`
       max-width: 320px;
       text-align: center;
 
+      h2 {
+        font-size: 24px;
+        margin: 64px 0 24px;
+        font-family: 'Poppins', sans-serif;
+      }
+
       > button {
         margin-top: 64px;
         height: 50px;
@@ -82,6 +88,7 @@ export const Container = styled.div`
         align-self: center;
       }
 
+      //! Separador
       div {
         font-size: 14px;
         color: #a8a8b3;
@@ -123,6 +130,16 @@ export const Container = styled.div`
         button,
         input {
           width: 100%;
+        }
+      }
+
+      p {
+        font-size: 14px;
+        color: #737380;
+        margin-top: 16px;
+
+        a {
+          color: #e559f9;
         }
       }
     }

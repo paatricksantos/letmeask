@@ -1,12 +1,12 @@
-import googleIconImg from '../../assets/images/google-icon.svg';
-import illustrationImg from '../../assets/images/illustration.svg';
-import logoImg from '../../assets/images/logo.svg';
-import { Button } from '../../components/Button';
-import { Container } from './styles';
+import googleIconImg from '../assets/images/google-icon.svg';
+import illustrationImg from '../assets/images/illustration.svg';
+import logoImg from '../assets/images/logo.svg';
+import { Button } from '../components/Button';
+import { Layout } from '../components/Layout';
 
-export function Home() {
+export function NewRoom() {
   return (
-    <Container>
+    <Layout>
       <aside>
         <img
           src={illustrationImg}
@@ -19,17 +19,16 @@ export function Home() {
       <main>
         <div>
           <img src={logoImg} alt="Letmeask" />
-          <button>
-            <img src={googleIconImg} alt="google" />
-            Crie sua sala com o Google
-          </button>
-          <div>ou entre em um sala</div>
+          <h2>Criar uma nova sala</h2>
           <form>
             <input type="text" placeholder="Digite o código da sala" />
             <Button type="submit">Entrar na sala</Button>
           </form>
+          <p>
+            Quer entrar em uma sala existente? <a href="#">Clique aqui</a>
+          </p>
         </div>
       </main>
-    </Container>
+    </Layout>
   );
 }
