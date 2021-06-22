@@ -1,14 +1,13 @@
 import React from 'react';
-import { Button } from './components/Button';
+import { Home } from './pages/Home';
+import GlobalStyle from './styles/global';
 
 function App() {
   return (
-    <div>
-      <Button text={'Não clique'} />
-      <Button />
-      <Button />
-      <Button />
-    </div>
+    <>
+      <Home />
+      <GlobalStyle />
+    </>
   );
 }
 
