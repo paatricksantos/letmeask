@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   header {
@@ -103,4 +103,20 @@ export const Container = styled.div`
       margin-top: 32px;
     }
   }
+`;
+
+export const ButtonLike = styled.button<{ liked: boolean }>`
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  color: #737380;
+
+  ${props =>
+    props.liked &&
+    css`
+      color: #835afd;
+      svg path {
+        stroke: #835afd;
+      }
+    `};
 `;

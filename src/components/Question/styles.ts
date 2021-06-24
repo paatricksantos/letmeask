@@ -20,7 +20,7 @@ export const Container = styled.div`
     align-items: center;
     margin-top: 24px;
 
-    > div {
+    > div:first-child {
       display: flex;
       align-items: center;
 
@@ -34,6 +34,18 @@ export const Container = styled.div`
         margin-left: 8px;
         color: #737380;
         font-size: 14px;
+      }
+    }
+
+    button {
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+
+      transition: filter 0.2;
+
+      &:hover {
+        filter: brightness(0.7);
       }
     }
   }
