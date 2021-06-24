@@ -1,11 +1,9 @@
-// import { FormEvent, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import logoImg from '../../assets/images/logo.svg';
 import deleteImg from '../../assets/images/delete.svg';
 import { Button } from '../../components/Button';
 import { RoomCode } from '../../components/RoomCode';
 import { Container } from './styles';
-// import { useAuth } from '../../hooks/useAuth';
 import { Question } from '../../components/Question';
 import { useRoom } from '../../hooks/useRoom';
 import { database } from '../../services/firebase';
@@ -15,7 +13,6 @@ type RoomParams = {
 };
 
 export function AdminRoom() {
-  // const { user } = useAuth();
   const { id: roomId } = useParams<RoomParams>();
   const { questions, title } = useRoom(roomId);
   const history = useHistory();
