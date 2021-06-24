@@ -1,13 +1,24 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.button`
+export const Container = styled.button<{ isOutlined: boolean }>`
   height: 50px;
   border-radius: 8px;
-  border: 0;
   font-weight: 500;
-  color: #fff;
-  background: #835afd;
+
   padding: 0 32px;
+
+  ${props =>
+    props.isOutlined
+      ? css`
+          color: #835afd;
+          background: #fff;
+          border: 1px solid #835afd;
+        `
+      : css`
+          color: #fff;
+          background: #835afd;
+          border: 0;
+        `}
 
   display: flex;
   justify-content: center;

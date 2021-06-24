@@ -22,7 +22,7 @@ export const Container = styled.div`
     max-width: 800px;
     margin: 0 auto;
 
-    > div {
+    > div:first-child {
       margin: 32px auto;
       display: flex;
       align-items: center;
@@ -97,6 +97,10 @@ export const Container = styled.div`
           }
         }
       }
+    }
+
+    > div:last-child {
+      margin-top: 32px;
     }
   }
 `;
