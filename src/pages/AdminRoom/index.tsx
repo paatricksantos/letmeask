@@ -1,4 +1,4 @@
-import { useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 
 import logoImg from '../../assets/images/logo.svg';
 import deleteImg from '../../assets/images/delete.svg';
@@ -52,7 +52,9 @@ export function AdminRoom() {
     <Container>
       <header>
         <div>
-          <img src={logoImg} alt="Letmeask" />
+          <Link to="/">
+            <img src={logoImg} alt="Letmeask" />
+          </Link>
           <div>
             <RoomCode code={roomId} />
             <Button isOutlined onClick={handleEndRoom}>
