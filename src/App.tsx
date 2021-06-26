@@ -7,6 +7,8 @@ import { Room } from './pages/Room/';
 import { NewRoom } from './pages/NewRoom';
 import { AdminRoom } from './pages/AdminRoom';
 import GlobalStyle from './styles/global';
+import Rooms from './pages/Rooms';
+import { ProtectedRoute } from './helper/ProtectedRoute';
 
 function App() {
   return (
@@ -14,9 +16,11 @@ function App() {
       <AuthContextProvider>
         <Switch>
           <Route exact path="/" component={Home} />
+
           <Route exact path="/rooms/new" component={NewRoom} />
-          <Route path="/rooms/:id" component={Room} />
-          <Route path="/admin/rooms/:id" component={AdminRoom} />
+          <Route exact path="/rooms" component={Rooms} />
+          <ProtectedRoute path="/rooms/:id" component={Room} />
+          <ProtectedRoute path="/admin/rooms/:id" component={AdminRoom} />
         </Switch>
       </AuthContextProvider>
       <GlobalStyle />

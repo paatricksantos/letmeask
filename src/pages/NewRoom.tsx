@@ -12,6 +12,7 @@ export function NewRoom() {
   const { user } = useAuth();
   const history = useHistory();
   const [newRoom, setNewRoom] = useState('');
+  const [roomPrivate, setRoomPrivate] = useState(false);
 
   async function handleCreateRoom(event: FormEvent) {
     event.preventDefault();
@@ -25,6 +26,7 @@ export function NewRoom() {
     const firebaseRoom = await roomRef.push({
       title: newRoom,
       authorId: user?.id,
+      isPrivate: roomPrivate,
     });
 
     history.push(`/admin/rooms/${firebaseRoom.key}`);
@@ -44,15 +46,22 @@ export function NewRoom() {
       <main>
         <div>
           <img src={logoImg} alt="Letmeask" />
-          <h2>Criar uma nova sala</h2>
+          <h2>Crie uma nova sala</h2>
           <form onSubmit={handleCreateRoom}>
             <input
               type="text"
-              placeholder="Digite o código da sala"
+              placeholder="Digite o nome da sala"
               value={newRoom}
               onChange={event => setNewRoom(event.target.value)}
             />
-            <Button type="submit">Entrar na sala</Button>
+            <label htmlFor="">
+              <input
+                type="checkbox"
+                onChange={event => setRoomPrivate(event.target.checked)}
+              />
+              Sala privada
+            </label>
+            <Button type="submit">Criar sala</Button>
           </form>
           <p>
             Quer entrar em uma sala existente? <Link to="/">Clique aqui</Link>

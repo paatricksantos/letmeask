@@ -115,7 +115,9 @@ export const Container = styled.div`
       }
 
       form {
-        input {
+        > input {
+          width: 100%;
+
           height: 50px;
           border-radius: 8px;
           padding: 0 16px;
@@ -123,12 +125,34 @@ export const Container = styled.div`
           border: 1px solid #a8a8b3;
         }
 
-        button {
-          margin-top: 16px;
+        > label {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-top: 8px;
+          margin-left: 5px;
+
+          input {
+            background: red;
+          }
         }
 
-        button,
-        input {
+        a {
+          color: #a8a8b3;
+          display: block;
+          text-align: left;
+          margin-left: 5px;
+          margin-top: 5px;
+
+          transition: all 0.2s;
+
+          &:hover {
+            filter: brightness(110%);
+          }
+        }
+
+        button {
+          margin-top: 16px;
           width: 100%;
         }
       }

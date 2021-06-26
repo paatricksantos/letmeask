@@ -12,6 +12,10 @@ export default createGlobalStyle`
     color: '#29292e';
   }
 
+  ul, li{
+    list-style: none;
+  }
+
   body, input, button, textarea{
     font: 400 16px 'Roboto',sans-serif;
   }

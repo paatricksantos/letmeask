@@ -1,5 +1,5 @@
 import { FormEvent, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import googleIconImg from '../assets/images/google-icon.svg';
 import illustrationImg from '../assets/images/illustration.svg';
@@ -70,6 +70,7 @@ export function Home() {
               onChange={event => setRoomCode(event.target.value)}
               value={roomCode}
             />
+            <Link to="/rooms">Ver salas já criadas</Link>
             <Button type="submit">Entrar na sala</Button>
           </form>
         </div>
